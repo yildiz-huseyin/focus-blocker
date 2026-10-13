@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Java Development Kit (JDK)
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -22,17 +22,20 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.x'
           channel: 'stable'
 
-      - name: Get Flutter dependencies
-        run: flutter pub get
+      - name: Create Flutter Project Wrapper
+        run: |
+          # Flutter native proje dosyalarını oluştur
+          flutter create --org com.example --project-name focus_blocker .
+          # Kendi özel AndroidManifest, servisler ve Flutter kodlarımızı koru
+          flutter pub get
 
       - name: Build Android APK (Release)
         run: flutter build apk --release
 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: focus-blocker-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
