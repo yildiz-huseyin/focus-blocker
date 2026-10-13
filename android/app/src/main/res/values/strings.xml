@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Focus Blocker</string>
+    <string name="accessibility_service_description">Focus Blocker katı odaklanma modunda dikkat dağıtıcı uygulamaları engellemek ve telefon kilidini yönetmek için bu izni kullanır.</string>
+</resources>
