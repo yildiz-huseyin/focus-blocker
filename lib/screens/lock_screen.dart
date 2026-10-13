@@ -128,7 +128,7 @@ class _LockScreenState extends State<LockScreen> with SingleTickerProviderStateM
                 ],
               ),
               content: Column(
-                mainAxisSize: min(MainAxisSize.min, MainAxisSize.values.length as MainAxisSize),
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
